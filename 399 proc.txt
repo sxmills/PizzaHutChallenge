@@ -1,0 +1,41 @@
+1			1 pass			1 used
+12			2 pass			2 used
+121			1 used
+123			3 pass			3 used
+1232		2 used
+1234		4 fail			4 unavail at sol_idx
+1236		6 pass			6 used
+12365		5 skip
+123652		2 used
+123654		4 pass			4 used
+1236541		1 used
+1236543		3 used
+1236547		7 fail			7 unavail at sol_idx
+1236549		9 fail			9 unavail at sol_idx
+			return sol_idx
+			clear 4 usage flag (if 1 set to 0)
+			tell that 4 failed at sol_idx - 1 (set to 2)
+			clear 7 and 9 fail at sol_idx
+			go back in with sol_idx - 1
+123652		2 used
+123654		4 unavail
+123656		6 used
+123658		8 fail			8 unavail at sol_idx
+			return sol_idx
+			clear 6 usage flag
+			tell that 6 failed at sol_idx - 2 (due to 5)
+			clear 4 and 8 fail at sol_idx
+			go back in with sol_idx - 2
+1232		2 used
+1234		4 unavail
+1236		6 unavail
+1238		8 fail			8 unavail at sol_idx
+			return sol_idx
+			clear 3 usage flag
+			tell taht 3 failed at sol_idx - 1
+			clear 4, 6, 8 fail at sol_idx
+			go back in with sol_idx - 1
+121			1 used
+123			3 unavail
+127			7 fail			7 unavail at sol_idx
+129			9 pass			9 used
